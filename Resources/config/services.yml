@@ -1,0 +1,22 @@
+parameters:
+    lucbu_ansible_wrapper.ansible_message_formatter.class: Lucbu\AnsibleWrapperBundle\Service\AnsibleMessageFormatterInterface
+    lucbu_ansible_wrapper.ansible_process_executor.class: Lucbu\AnsibleWrapperBundle\Service\Executor\AnsibleProcessExecutor
+    lucbu_ansible_wrapper.ansible_playbook_process_executor.class: Lucbu\AnsibleWrapperBundle\Service\Executor\AnsiblePlaybookProcessExecutor
+
+services:
+    lucbu_ansible_wrapper.ansible_message_formatter:
+        class: "%lucbu_ansible_wrapper.ansible_message_formatter.class%"
+
+    lucbu_ansible_wrapper.ansible_process_executor:
+        class: "%lucbu_ansible_wrapper.ansible_process_executor.class%"
+        arguments:
+          - '%lucbu_ansible_wrapper.ansible.user%'
+          - '%lucbu_ansible_wrapper.ansible.dir%'
+          - '@event_dispatcher'
+
+    lucbu_ansible_wrapper.ansible_playbook_process_executor:
+        class: "%lucbu_ansible_wrapper.ansible_playbook_process_executor.class%"
+        arguments:
+          - '%lucbu_ansible_wrapper.ansible_playbook.user%'
+          - '%lucbu_ansible_wrapper.ansible_playbook.dir%'
+          - '@event_dispatcher'

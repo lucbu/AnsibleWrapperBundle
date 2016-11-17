@@ -1,0 +1,16 @@
+{
+    "name": "lucbu/ansible-wrapper-bundle",
+    "license": "MIT",
+    "description": "A Symfony wrapper for Ansible, providing launcher, events...",
+    "type": "project",
+    "keywords": ["Symfony", "Ansible", "Wrapper"],
+    "require": {
+        "symfony/symfony": "2.8.*"
+    },
+    "authors": [
+        {
+            "name": "Lucas Burdeyron",
+            "email": "lucas.burdeyron@gmail.com"
+        }
+    ]
+}
